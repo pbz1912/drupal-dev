@@ -3,7 +3,7 @@ vagrantfile-local:
     vm:
         box: ubuntu-precise12042-x64-vbox43
         box_url: 'http://box.puphpet.com/ubuntu-precise12042-x64-vbox43.box'
-        hostname: webserver.local
+        hostname: vagrant.local
         network:
             private_network: 172.16.10.10
             forwarded_port:
