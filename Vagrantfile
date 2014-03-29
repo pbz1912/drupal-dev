@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 
   if data['vm']['hostname'].to_s != ''
     config.vm.hostname = "#{data['vm']['hostname']}"
-  end
+  end  
 
   if data['vm']['network']['private_network'].to_s != ''
     config.vm.network "private_network", ip: "#{data['vm']['network']['private_network']}"
@@ -112,6 +112,29 @@ Vagrant.configure("2") do |config|
     config.vagrant.host = data['vagrant']['host'].gsub(":", "").intern
   end
 
+  if !data['vagrant']['host'].nil?
+    config.vagrant.host = data['vagrant']['host'].gsub(":", "").intern
+  end
+end
+
+# Set up the hostmanager plugin.
+# To install, run 'vagrant plugin install vagrant/hostmanager'.
+apache = configValues['apache']
+Vagrant.configure("2") do |config|
+
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+  config.hostmanager.include_offline = true
+  config.hostmanager.ignore_private_ip = false
+
+  # Collect all vhosts and provide them to hostmanager.
+  if !apache['vhosts'].nil?
+    vhosts = []
+    apache['vhosts'].each do |i, vhost|
+      vhosts.push(vhost['servername'])
+    end
+  end
+  config.hostmanager.aliases = vhosts.join(' ')
 end
 
 
