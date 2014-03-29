@@ -156,8 +156,6 @@ xdebug:
         xdebug.remote_handler: dbgp
         xdebug.remote_port: '9000'
         xdebug.max_nesting_level: '1000'
-xhprof:
-    install: '1'
 drush:
     install: '1'
     settings:
