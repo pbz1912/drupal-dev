@@ -137,6 +137,7 @@ php:
             - memcached
         pear:
             - PHP_CodeSniffer
+            - console_table
         pecl:
             - pecl_http
             - APC
