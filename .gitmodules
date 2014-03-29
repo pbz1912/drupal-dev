@@ -1,0 +1,8 @@
+[submodule "drupal7"]
+	path = drupal7
+	url = http://git.drupal.org/project/drupal.git
+	branch = 7.x
+[submodule "drupal8"]
+	path = drupal8
+	url = http://git.drupal.org/project/drupal.git
+	branch = 8.x
