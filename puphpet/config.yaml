@@ -126,7 +126,7 @@ nginx:
 php:
     install: '1'
     version: '54'
-    composer: 1
+    composer: '1'
     modules:
         php:
             - cli
