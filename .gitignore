@@ -12,4 +12,16 @@ Thumbs.db
 codekit-config.json
 .sass-cache
 
+#
+# Vagrant temporary files.
+#
 /.vagrant/
+
+#
+# Downloaded Drupal projects.
+#
+!/drupal7/empty
+!/drupal8/empty
+# Comment out below if you want to commit downloaded projects.
+/drupal7/*
+/drupal8/*
