@@ -27,11 +27,11 @@ vagrantfile-local:
                     - '--parser future'
         synced_folder:
             M5PljiGzO6Qa:
-                source: /www/dev-tools/drupal7
+                source: /www/drupal-dev/drupal7
                 target: /var/www/drupal7
                 nfs: 'true'
             ZpfT8w0uGD6P:
-                source: /www/dev-tools/drupal8
+                source: /www/drupal-dev/drupal8
                 target: /var/www/drupal8
                 nfs: 'true'
         usable_port_range: 2200..2250
