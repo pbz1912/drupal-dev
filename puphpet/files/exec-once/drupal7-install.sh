@@ -7,7 +7,7 @@
 #
 
 # Drupal install directory.
-DRUPAL_DIR=/www/drupal7
+DRUPAL_DIR=/var/www/drupal7
 
 # Drupal URL.
 DRUPAL_URI=drupal7.local

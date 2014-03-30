@@ -28,11 +28,11 @@ vagrantfile-local:
         synced_folder:
             M5PljiGzO6Qa:
                 source: /www/dev-tools/drupal7
-                target: /www/drupal7
+                target: /var/www/drupal7
                 nfs: 'true'
             ZpfT8w0uGD6P:
                 source: /www/dev-tools/drupal8
-                target: /www/drupal8
+                target: /var/www/drupal8
                 nfs: 'true'
         usable_port_range: 2200..2250
     ssh:
@@ -80,9 +80,9 @@ apache:
         - php
         - rewrite
     vhosts:
-        ba8GkRNglHkc:
-            servername: drupal8.local
-            docroot: /var/www/drupal8
+        BfucBmrX0CSz:
+            servername: drupal7.local
+            docroot: /var/www/drupal7
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -93,9 +93,9 @@ apache:
             ssl_key: ''
             ssl_chain: ''
             ssl_certs_dir: ''
-        BfucBmrX0CSz:
-            servername: drupal7.local
-            docroot: /var/www/drupal7
+        ba8GkRNglHkc:
+            servername: drupal8.local
+            docroot: /var/www/drupal8
             port: '80'
             setenv:
                 - 'APP_ENV dev'
