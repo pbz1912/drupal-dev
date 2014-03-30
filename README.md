@@ -27,6 +27,8 @@ What's in the box?
 * Apache 2
 * PHP 5.4
 * MySQL
+* Composer
+* XDebug
 * APC
 * Memcache
 * Mail catcher
@@ -35,6 +37,10 @@ What's in the box?
 
 Reconfigure this box in `/puphpet/config.yaml`.
 
+Credentials
+-----------
+* MySQL: admin/password
+* Drupal 7/8: admin/password
 
 What else is there?
 -------------------
