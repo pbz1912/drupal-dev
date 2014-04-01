@@ -35,7 +35,7 @@ What's in the box?
 * Drupal 7
 * Drupal 8
 
-Reconfigure this box in `/puphpet/config.yaml`.
+Configuration for this box is stored in file `/puphpet/config.yaml`.
 
 Credentials
 -----------
