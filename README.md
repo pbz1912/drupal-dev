@@ -76,7 +76,7 @@ Links
 * [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager)
 * [PuPHPet](https://puphpet.com/)
 * [PHPStorm](http://www.jetbrains.com/phpstorm/)
-* [Dupal](https://www.drupal.org)
+* [Drupal](https://www.drupal.org)
 
 Productivity improvement for Mac!
 ---------------------------------
