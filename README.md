@@ -45,7 +45,7 @@ Credentials
 What else is there?
 -------------------
 * PHPStorm_settings.jar - [PHPStorm](http://www.jetbrains.com/phpstorm/) settings file with Drupal coding formatting standards.
-  Use File > Import Settings from within PHPStorm to apply this settings.
+  Use File > Import Settings from within PHPStorm to apply these settings.
 
 Installation
 ------------
