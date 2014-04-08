@@ -53,8 +53,8 @@ Installation
 2. Install [Vagrant](http://www.vagrantup.com/)
 3. Install [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager)
 4. Some OSes require NFS server to be installed. OSX has NFS server inbuilt and running by default.
-5. Download this project and extract it into /www/drupal-tools directory, so that file Vagrantfile would be accessible at /www/drupal-tools/Vagrantfile.
-5. Navigate to /www/drupal-tools/ directory and run `vagrant up`.
+5. Download this project and extract it into /www/drupal-dev directory, so that file Vagrantfile would be accessible at /www/drupal-dev/Vagrantfile.
+5. Navigate to /www/drupal-dev/ directory and run `vagrant up`.
 
 FAQ
 ---
