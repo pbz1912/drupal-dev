@@ -133,8 +133,6 @@ Vagrant.configure("2") do |config|
     apache['vhosts'].each do |i, vhost|
       vhosts.push(vhost['servername'])
     end
-  end
-  config.hostmanager.aliases = vhosts.join(' ')
+    config.hostmanager.aliases = vhosts.join(' ')
+  end 
 end
-
-
