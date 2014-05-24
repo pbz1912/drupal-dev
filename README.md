@@ -44,7 +44,7 @@ Credentials
 
 What else is there?
 -------------------
-* PHPStorm_settings.jar - [PHPStorm](http://www.jetbrains.com/phpstorm/) settings file with Drupal coding formatting standards.
+* PHPStorm_settings.jar - [PHPStorm](http://www.jetbrains.com/phpstorm/) settings file with Drupal code formatting standards.
   Use File > Import Settings from within PHPStorm to apply these settings.
 
 Installation
@@ -53,18 +53,18 @@ Installation
 2. Install [Vagrant](http://www.vagrantup.com/)
 3. Install [Vagrant Host Manager](https://github.com/smdahlen/vagrant-hostmanager)
 4. Some OSes require NFS server to be installed. OSX has NFS server inbuilt and running by default.
-5. Download this project and extract it into /www/drupal-dev directory, so that file Vagrantfile would be accessible at /www/drupal-dev/Vagrantfile.
+5. Download this project and extract it into /www/drupal-dev directory, so that file Vagrantfile is accessible at /www/drupal-dev/Vagrantfile.
 5. Navigate to /www/drupal-dev/ directory and run `vagrant up`.
 
 FAQ
 ---
 * Can I shutdown my VM without loosing changes?
   
-  Nothing will be lost when you simple power off the VM.  
+  Yes. Nothing will be lost when you simply power off the VM.  
 
 * What will happen to installed Drupal 7 and Drupal 8 sites after reboot of VM?
   
-  Nothing. These sites are installed only on the first run.
+  Nothing. They will be preserved. These sites are installed only on the first run.
 
 * Can this be used for development of real projects?
   
