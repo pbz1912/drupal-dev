@@ -9,6 +9,11 @@ define puphpet::php::pecl (
   $service_autorestart
 ){
 
+  $ignore = {
+    'date_time' => true,
+    'mysql'     => true,
+  }
+
   $pecl = $::osfamily ? {
     'Debian' => {
       #
@@ -18,27 +23,62 @@ define puphpet::php::pecl (
     }
   }
 
-  $package = $::osfamily ? {
+  $pecl_beta = $::osfamily ? {
     'Debian' => {
-      'apc'  => $::operatingsystem ? {
-        'ubuntu' => 'php5-apcu',
-        'debian' => 'php5-apc',
+      'augeas'      => 'augeas',
+      'zendopcache' => $::operatingsystem ? {
+        'debian' => false,
+        'ubuntu' => 'ZendOpcache',
       },
-      'apcu'  => 'php5-apcu',
-      'mongo' => 'php5-mongo',
     },
     'Redhat' => {
-      'apc'   => 'php-pecl-apcu',
-      'apcu'  => 'php-pecl-apcu',
-      'mongo' => 'php-pecl-mongo',
+      #
+    }
+  }
+
+  $package = $::osfamily ? {
+    'Debian' => {
+      'apc'         => $::operatingsystem ? {
+        'debian' => 'php5-apc',
+        'ubuntu' => 'php5-apcu',
+      },
+      'apcu'        => 'php5-apcu',
+      'imagick'     => 'php5-imagick',
+      'memcache'    => 'php5-memcache',
+      'memcached'   => 'php5-memcached',
+      'mongo'       => $::lsbdistcodename ? {
+        'precise' => false,
+        default   => 'php5-mongo',
+      },
+      'zendopcache' => 'php5-zendopcache',
+    },
+    'Redhat' => {
+      'apc'         => 'php-pecl-apcu',
+      'apcu'        => 'php-pecl-apcu',
+      'imagick'     => 'php-pecl-imagick',
+      'memcache'    => 'php-pecl-memcache',
+      'memcached'   => 'php-pecl-memcached',
+      'mongo'       => 'php-pecl-mongo',
+      'zendopcache' => 'php-pecl-zendopcache',
     }
   }
 
   $downcase_name = downcase($name)
 
-  if has_key($pecl, $downcase_name) {
-    $pecl_name    = $pecl[$downcase_name]
-    $package_name = false
+  if has_key($ignore, $downcase_name) {
+    $pecl_name       = $pecl[$downcase_name]
+    $package_name    = false
+    $preferred_state = 'stable'
+  }
+  elsif has_key($pecl, $downcase_name) {
+    $pecl_name       = false
+    $package_name    = false
+    $preferred_state = false
+  }
+  elsif has_key($pecl_beta, $downcase_name) and $pecl_beta[$downcase_name] {
+    $pecl_name       = $pecl_beta[$downcase_name]
+    $package_name    = false
+    $preferred_state = 'beta'
   }
   elsif has_key($package, $downcase_name) {
     $pecl_name    = false
@@ -49,9 +89,10 @@ define puphpet::php::pecl (
     $package_name = false
   }
 
-  if $pecl_name and ! defined(Php::Pecl::Module[$pecl_name]) {
-    php::pecl::module { $pecl_name:
+  if $pecl_name and ! defined(::Php::Pecl::Module[$pecl_name]) {
+    ::php::pecl::module { $pecl_name:
       use_package         => false,
+      preferred_state     => $preferred_state,
       service_autorestart => $service_autorestart,
     }
   }
