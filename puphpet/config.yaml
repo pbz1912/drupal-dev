@@ -53,6 +53,7 @@ vagrantfile-local:
         host: detect
 server:
     packages:
+        - ruby
         - php-apc
         - php5-memcache
         - memcached
