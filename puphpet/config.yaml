@@ -1,7 +1,7 @@
 ---
 vagrantfile-local:
     vm:
-        box: ubuntu-precise12042-x64-vbox43
+        box: puphpet/debian75-x64
         box_url: puphpet/debian75-x64
         memory: '2048'
         hostname: drupal-dev.local
@@ -33,13 +33,13 @@ vagrantfile-local:
                     - '--parser future'
         synced_folder:
             umcFb7AF9Z9o:
-                source: /www/drupal-dev/drupal7
+                source: drupal7
                 target: /var/www/drupal7
                 sync_type: nfs
                 rsync:
                     auto: 'false'
             bzlyuQf3NbvC:
-                source: /www/drupal-dev/drupal8
+                source: drupal8
                 target: /var/www/drupal8
                 sync_type: nfs
                 rsync:
